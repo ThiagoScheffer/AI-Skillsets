@@ -1,0 +1,6 @@
+interface:
+  display_name: "Security Audit"
+  short_description: "Audit repos for auth, IDOR, secrets, and XSS"
+  default_prompt: "Use $security-audit to audit this repository across the five security categories and generate the verified pt-BR PDF report."
+policy:
+  allow_implicit_invocation: true

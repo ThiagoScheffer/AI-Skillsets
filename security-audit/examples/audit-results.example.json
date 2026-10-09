@@ -1,0 +1,122 @@
+{
+  "schema_version": "1.0",
+  "project": {
+    "name": "example-app",
+    "audit_date": "2026-08-29",
+    "repository": "https://example.invalid/acme/example-app"
+  },
+  "scope": {
+    "audited": [
+      "backend API",
+      "web frontend",
+      "deployment configuration"
+    ],
+    "excluded": [
+      "third-party dependencies"
+    ],
+    "methodology_note": "Exemplo fictício para testar o renderizador; não representa um sistema real."
+  },
+  "stack": {
+    "languages": [
+      "TypeScript"
+    ],
+    "backend": [
+      "Express"
+    ],
+    "frontend": [
+      "React"
+    ],
+    "database": [
+      "PostgreSQL"
+    ],
+    "data_access": [
+      "Prisma"
+    ],
+    "authentication": [
+      "JWT middleware"
+    ],
+    "authorization": [
+      "RBAC middleware + service checks"
+    ],
+    "tenant_isolation": [
+      "organization_id filters"
+    ],
+    "deployment": [
+      "Docker",
+      "GitHub Actions"
+    ],
+    "evidence": [
+      "package.json",
+      "src/server.ts"
+    ]
+  },
+  "coverage": {
+    "backend_handlers_discovered": 18,
+    "backend_handlers_reviewed": 18,
+    "authenticated_handlers": 16,
+    "privileged_operations": 4,
+    "object_id_handlers": 9,
+    "tenant_scoped_operations": 12,
+    "frontend_privilege_gates": 3,
+    "frontend_gates_mapped": 3,
+    "unsafe_rendering_sinks": 2,
+    "secret_locations_scanned": 14,
+    "git_history_available": true,
+    "git_history_scanned": true,
+    "deployment_files_reviewed": 3,
+    "notes": [
+      "Fixture fictícia para smoke test do pacote."
+    ]
+  },
+  "findings": [
+    {
+      "id": "SEC-001",
+      "category": "idor-bola",
+      "severity": "High",
+      "title": "Lookup de projeto não restringe a organização autenticada",
+      "component": "Projects API",
+      "description": "Exemplo fictício: um endpoint carrega projeto apenas por ID e retorna o registro antes de qualquer política de organização.",
+      "evidence": [
+        {
+          "location": "src/routes/projects.ts:42-44",
+          "snippet": "const project = await db.project.findUnique({ where: { id: req.params.id } });\nreturn res.json(project);"
+        }
+      ],
+      "attacker_prerequisites": "Usuário autenticado de outra organização.",
+      "exploitability": "Exemplo fictício: fornecer o ID de um projeto pertencente a outra organização.",
+      "impact": "Leitura entre tenants de dados de projeto.",
+      "existing_controls": "Autenticação presente, mas sem autorização de objeto neste caminho fictício.",
+      "remediation": "Consultar por id + organization_id derivado da sessão ou centralizar uma política de objeto equivalente.",
+      "regression_test": "Criar dois tenants e confirmar que usuário A recebe 404/403 ao usar o ID do projeto de B.",
+      "mappings": [
+        "OWASP API1:2023",
+        "CWE-639",
+        "ASVS 5.0 8.2.2"
+      ],
+      "severity_assumptions": "O endpoint está exposto a usuários autenticados e projetos contêm dados sensíveis."
+    }
+  ],
+  "strengths": [
+    {
+      "title": "Rotas administrativas usam middleware de papel",
+      "description": "Exemplo fictício para validar a seção visual.",
+      "evidence": [
+        "src/routes/admin.ts:10-30"
+      ]
+    }
+  ],
+  "limitations": [
+    "Fixture fictícia; nenhuma aplicação real foi auditada."
+  ],
+  "recommendations": [
+    {
+      "priority": "P1",
+      "title": "Centralizar escopo de projetos por organização",
+      "description": "Aplicar o escopo no repositório/consulta e cobrir todos os handlers equivalentes.",
+      "finding_ids": [
+        "SEC-001"
+      ]
+    }
+  ],
+  "github_issues": []
+}

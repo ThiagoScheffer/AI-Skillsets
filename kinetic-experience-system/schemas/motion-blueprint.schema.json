@@ -1,0 +1,425 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/kinetic-experience/motion-blueprint.schema.json",
+  "title": "Kinetic Experience \u2014 Motion Blueprint v1.0",
+  "description": "Design-time contract; not a GSAP/Motion/Hyperkinetic runtime API.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "project",
+    "mode",
+    "experience",
+    "constraints",
+    "navigation",
+    "ownership",
+    "transitions",
+    "verification"
+  ],
+  "properties": {
+    "version": {
+      "const": "1.0"
+    },
+    "project": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "framework": {
+          "type": "string",
+          "minLength": 1
+        },
+        "existing": {
+          "type": "boolean"
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "name",
+        "framework",
+        "existing"
+      ],
+      "additionalProperties": false
+    },
+    "mode": {
+      "enum": [
+        "RETROFIT",
+        "GREENFIELD",
+        "FOCUSED",
+        "EXPLORATION"
+      ]
+    },
+    "experience": {
+      "type": "object",
+      "properties": {
+        "goal": {
+          "type": "string",
+          "minLength": 1
+        },
+        "audience": {
+          "type": "string",
+          "minLength": 1
+        },
+        "profile": {
+          "enum": [
+            "subtle",
+            "expressive",
+            "cinematic"
+          ]
+        },
+        "visualPrinciples": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "goal",
+        "profile",
+        "visualPrinciples"
+      ],
+      "additionalProperties": false
+    },
+    "constraints": {
+      "type": "object",
+      "properties": {
+        "functionalInvariants": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "accessibility": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "performance": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "functionalInvariants",
+        "accessibility",
+        "performance"
+      ],
+      "additionalProperties": false
+    },
+    "navigation": {
+      "type": "object",
+      "properties": {
+        "strategy": {
+          "enum": [
+            "native-view-transition",
+            "motion-presence",
+            "live-parallel",
+            "local-state",
+            "progressive-enhancement",
+            "none"
+          ]
+        },
+        "interruption": {
+          "enum": [
+            "latest-wins",
+            "complete-then-navigate",
+            "direct-fallback"
+          ]
+        },
+        "scrollPolicy": {
+          "enum": [
+            "router-owned",
+            "history-restoration",
+            "manual-with-tests",
+            "not-applicable"
+          ]
+        },
+        "focusPolicy": {
+          "type": "string",
+          "minLength": 1
+        },
+        "fallback": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "strategy",
+        "interruption",
+        "scrollPolicy",
+        "focusPolicy",
+        "fallback"
+      ],
+      "additionalProperties": false
+    },
+    "ownership": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "target": {
+            "type": "string",
+            "minLength": 1
+          },
+          "property": {
+            "type": "string",
+            "minLength": 1
+          },
+          "owner": {
+            "enum": [
+              "css",
+              "waapi",
+              "gsap",
+              "motion",
+              "native-view-transition",
+              "webgl",
+              "none"
+            ]
+          },
+          "lifecycle": {
+            "type": "string",
+            "minLength": 1
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "target",
+          "property",
+          "owner",
+          "lifecycle"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "transitions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "from": {
+            "type": "string",
+            "minLength": 1
+          },
+          "to": {
+            "type": "string",
+            "minLength": 1
+          },
+          "relation": {
+            "enum": [
+              "parent-child",
+              "child-parent",
+              "sibling",
+              "overview-detail",
+              "state-change",
+              "environment-change"
+            ]
+          },
+          "trigger": {
+            "type": "string",
+            "minLength": 1
+          },
+          "intent": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sharedElements": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "identity": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "source": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "target": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "strategy": {
+                  "enum": [
+                    "shared-layout",
+                    "flip",
+                    "native-view-transition",
+                    "text-morph",
+                    "svg-morph",
+                    "shader",
+                    "none"
+                  ]
+                }
+              },
+              "required": [
+                "identity",
+                "source",
+                "target",
+                "strategy"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "beats": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "action": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "at": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "durationMs": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 5000
+                },
+                "owner": {
+                  "enum": [
+                    "css",
+                    "waapi",
+                    "gsap",
+                    "motion",
+                    "native-view-transition",
+                    "webgl",
+                    "none"
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "action",
+                "at",
+                "durationMs",
+                "owner"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "fallbacks": {
+            "type": "object",
+            "properties": {
+              "reducedMotion": {
+                "type": "string",
+                "minLength": 1
+              },
+              "absentSource": {
+                "type": "string",
+                "minLength": 1
+              },
+              "resourceFailure": {
+                "type": "string",
+                "minLength": 1
+              },
+              "interrupted": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "reducedMotion",
+              "absentSource",
+              "resourceFailure",
+              "interrupted"
+            ],
+            "additionalProperties": false
+          },
+          "acceptanceTests": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "required": [
+          "id",
+          "from",
+          "to",
+          "relation",
+          "trigger",
+          "intent",
+          "sharedElements",
+          "beats",
+          "fallbacks",
+          "acceptanceTests"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "verification": {
+      "type": "object",
+      "properties": {
+        "scenarios": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "status": {
+          "enum": [
+            "untested",
+            "in-progress",
+            "verified"
+          ]
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "scenarios",
+        "status",
+        "evidence"
+      ],
+      "additionalProperties": false
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

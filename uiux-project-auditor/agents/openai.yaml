@@ -1,0 +1,4 @@
+interface:
+  display_name: "UIUX Project Auditor"
+  short_description: "Audit and improve UI/UX with security awareness"
+  default_prompt: "Use $uiux-project-auditor to audit this project end-to-end, prioritize issues, and propose verified fixes without changing files unless I ask."

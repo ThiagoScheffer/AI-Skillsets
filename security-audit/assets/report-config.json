@@ -1,0 +1,16 @@
+{
+  "page": {
+    "size": "A4",
+    "margin_cm": 2.0
+  },
+  "colors": {
+    "Critical": "#B91C1C",
+    "High": "#EA580C",
+    "Medium": "#D97706",
+    "Low": "#2563EB",
+    "Informational": "#6B7280",
+    "Strength": "#059669"
+  },
+  "report_language": "pt-BR",
+  "title_prefix": "Relatório de Auditoria de Segurança"
+}

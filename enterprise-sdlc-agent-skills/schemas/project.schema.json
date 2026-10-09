@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SDLC Project",
+  "type": "object",
+  "required": [
+    "name",
+    "risk_tier",
+    "profiles",
+    "lifecycle"
+  ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "type": "string"
+    },
+    "work_type": {
+      "enum": [
+        "greenfield",
+        "brownfield",
+        "feature",
+        "bug",
+        "refactor",
+        "migration",
+        "incident",
+        "release"
+      ]
+    },
+    "risk_tier": {
+      "enum": [
+        "R0",
+        "R1",
+        "R2",
+        "R3"
+      ]
+    },
+    "profiles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "lifecycle": {
+      "enum": [
+        "discovery",
+        "prd",
+        "requirements",
+        "ux",
+        "system-design",
+        "architecture-security",
+        "implementation-plan",
+        "implementation",
+        "verification",
+        "release",
+        "operations"
+      ]
+    },
+    "repository": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "owners": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true
+}

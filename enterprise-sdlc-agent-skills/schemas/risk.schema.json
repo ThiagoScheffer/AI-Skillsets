@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Risk Assessment",
+  "type": "object",
+  "required": [
+    "tier",
+    "factors"
+  ],
+  "properties": {
+    "tier": {
+      "enum": [
+        "R0",
+        "R1",
+        "R2",
+        "R3"
+      ]
+    },
+    "factors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "sensitive_data": {
+      "type": "boolean"
+    },
+    "auth_or_privilege_change": {
+      "type": "boolean"
+    },
+    "financial_impact": {
+      "type": "boolean"
+    },
+    "regulatory_exposure": {
+      "type": "boolean"
+    },
+    "irreversible_actions": {
+      "type": "boolean"
+    },
+    "availability_critical": {
+      "type": "boolean"
+    },
+    "ai_consequential_actions": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": true
+}

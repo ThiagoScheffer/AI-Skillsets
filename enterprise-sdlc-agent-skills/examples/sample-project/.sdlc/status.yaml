@@ -1,0 +1,6 @@
+current_state: requirements
+last_completed_state: prd
+blocking_gaps:
+  - Formalize NFR verification targets before system design approval.
+notes:
+  - Example only; replace with real project status.

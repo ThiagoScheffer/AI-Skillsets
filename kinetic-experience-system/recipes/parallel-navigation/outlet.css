@@ -1,0 +1,6 @@
+/* Companion styles; adapt the stacking and scroll strategy to your app. */
+[data-wrapper] { display: grid; }
+[data-page] { grid-area: 1 / 1; }
+[data-page-incoming] { position: fixed; top: 0; left: 0; width: 100%; z-index: 2; }
+[data-page-outgoing] { pointer-events: none; }
+/* Destination focus, live route announcement and scroll restoration remain app responsibilities. */

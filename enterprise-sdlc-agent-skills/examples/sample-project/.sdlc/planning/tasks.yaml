@@ -1,0 +1,7 @@
+tasks:
+  - id: TASK-001
+    title: Implement first provider ingestion slice
+    requirements: [FR-001, NFR-001]
+    acceptance: [AC-001, AC-002]
+    expected_evidence: [TEST-001, TEST-002, TEST-003]
+    dependencies: []

@@ -1,0 +1,105 @@
+{
+  "version": "1.0",
+  "project": {
+    "name": "Project placeholder",
+    "framework": "React Router",
+    "existing": true
+  },
+  "mode": "RETROFIT",
+  "experience": {
+    "goal": "Preserve visual continuity during high-value navigation",
+    "profile": "expressive",
+    "visualPrinciples": [
+      "Preserve selected object identity",
+      "Keep utility navigation fast",
+      "Visual hierarchy before effects"
+    ]
+  },
+  "constraints": {
+    "functionalInvariants": [
+      "Deep links and Back/Forward must work",
+      "No business logic changed"
+    ],
+    "accessibility": [
+      "Reduced-motion variant",
+      "Keyboard/focus preserved",
+      "No inert active page"
+    ],
+    "performance": [
+      "Prefer transforms/opacity",
+      "Benchmark on representative hardware; never infer FPS"
+    ]
+  },
+  "navigation": {
+    "strategy": "native-view-transition",
+    "interruption": "direct-fallback",
+    "scrollPolicy": "router-owned",
+    "focusPolicy": "Focus destination heading after completed route navigation",
+    "fallback": "Direct route navigation without animation"
+  },
+  "ownership": [
+    {
+      "target": "product-image",
+      "property": "view-transition-name",
+      "owner": "native-view-transition",
+      "lifecycle": "active route navigation only"
+    }
+  ],
+  "transitions": [
+    {
+      "id": "catalog-to-product",
+      "from": "/catalog",
+      "to": "/product/:id",
+      "relation": "overview-detail",
+      "trigger": "Product tile click",
+      "intent": "Preserve selection context",
+      "sharedElements": [
+        {
+          "identity": "product:id",
+          "source": "product-tile:image",
+          "target": "product-detail:hero",
+          "strategy": "native-view-transition"
+        }
+      ],
+      "beats": [
+        {
+          "id": "reveal-hero",
+          "action": "Morph product image into hero",
+          "at": "start",
+          "durationMs": 450,
+          "owner": "native-view-transition"
+        },
+        {
+          "id": "show-metadata",
+          "action": "Show product specifications",
+          "at": "after:reveal-hero",
+          "durationMs": 180,
+          "owner": "css"
+        }
+      ],
+      "fallbacks": {
+        "reducedMotion": "Switch to near-instant content update without spatial movement",
+        "absentSource": "Direct hero enter; no origin morph",
+        "resourceFailure": "Render product content and error image without blocking navigation",
+        "interrupted": "Reconcile latest route and clear old names"
+      },
+      "acceptanceTests": [
+        "Direct product URL loads with no origin element",
+        "Back restores catalog navigation",
+        "Rapid click does not freeze UI",
+        "Reduced motion retains selected product semantics"
+      ]
+    }
+  ],
+  "verification": {
+    "scenarios": [
+      "Deep link",
+      "Back/Forward",
+      "Rapid clicks",
+      "Reduced motion",
+      "Small viewport"
+    ],
+    "status": "untested",
+    "evidence": []
+  }
+}

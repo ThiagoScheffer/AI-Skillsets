@@ -1,0 +1,114 @@
+{
+  "version": "1.0",
+  "project": {
+    "name": "Museum scene navigation",
+    "framework": "React Router + React Three Fiber",
+    "existing": false
+  },
+  "mode": "EXPLORATION",
+  "experience": {
+    "goal": "Maintain artifact orientation between museum rooms",
+    "profile": "cinematic",
+    "visualPrinciples": [
+      "Preserve selected object identity",
+      "Keep utility navigation fast",
+      "Visual hierarchy before effects"
+    ]
+  },
+  "constraints": {
+    "functionalInvariants": [
+      "Deep links and Back/Forward must work",
+      "No business logic changed"
+    ],
+    "accessibility": [
+      "Reduced-motion variant",
+      "Keyboard/focus preserved",
+      "No inert active page"
+    ],
+    "performance": [
+      "Prefer transforms/opacity",
+      "Benchmark on representative hardware; never infer FPS"
+    ]
+  },
+  "navigation": {
+    "strategy": "live-parallel",
+    "interruption": "complete-then-navigate",
+    "scrollPolicy": "router-owned",
+    "focusPolicy": "Focus destination heading after completed route navigation",
+    "fallback": "Direct route navigation without animation"
+  },
+  "ownership": [
+    {
+      "target": "scene-camera-rig",
+      "property": "camera position/quaternion",
+      "owner": "webgl",
+      "lifecycle": "persistent across route changes"
+    },
+    {
+      "target": "route-caption",
+      "property": "opacity",
+      "owner": "gsap",
+      "lifecycle": "shared route timeline"
+    }
+  ],
+  "transitions": [
+    {
+      "id": "room-to-room",
+      "from": "/exhibit/:room",
+      "to": "/exhibit/:nextRoom",
+      "relation": "environment-change",
+      "trigger": "Choose an adjacent room",
+      "intent": "Preserve spatial orientation as camera reframes exhibit",
+      "sharedElements": [
+        {
+          "identity": "museum:artifact",
+          "source": "room:artifact",
+          "target": "room-next:artifact",
+          "strategy": "shader"
+        }
+      ],
+      "beats": [
+        {
+          "id": "camera-shift",
+          "action": "Interpolate camera to next exhibit",
+          "at": "start",
+          "durationMs": 850,
+          "owner": "webgl"
+        },
+        {
+          "id": "caption-switch",
+          "action": "Crossfade room label as camera settles",
+          "at": "after:camera-shift",
+          "durationMs": 250,
+          "owner": "gsap"
+        }
+      ],
+      "fallbacks": {
+        "reducedMotion": "Static new room still with semantic heading",
+        "absentSource": "Show destination room without camera morph",
+        "resourceFailure": "Show accessible exhibit image and text if WebGL unavailable",
+        "interrupted": "Keep route state authoritative; complete or fallback if camera tween is interrupted"
+      },
+      "acceptanceTests": [
+        "No GPU still provides readable exhibit",
+        "Keyboard navigation can change rooms",
+        "Context loss recovers",
+        "All room deep links work"
+      ]
+    }
+  ],
+  "verification": {
+    "scenarios": [
+      "Deep link",
+      "Back/Forward",
+      "Rapid clicks",
+      "Reduced motion",
+      "Small viewport",
+      "WebGL context loss",
+      "Touch interaction",
+      "GPU memory after 20 transitions"
+    ],
+    "status": "untested",
+    "evidence": []
+  }
+}

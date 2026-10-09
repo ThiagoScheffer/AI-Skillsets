@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Gate Ledger",
+  "type": "object",
+  "required": [
+    "gates"
+  ],
+  "properties": {
+    "gates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "gate",
+          "type",
+          "status"
+        ],
+        "properties": {
+          "gate": {
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "automated",
+              "human"
+            ]
+          },
+          "status": {
+            "enum": [
+              "not_required",
+              "pending",
+              "ready_for_review",
+              "approved",
+              "rejected",
+              "blocked",
+              "superseded"
+            ]
+          },
+          "approved_by": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "date": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "evidence": {
+            "type": [
+              "string",
+              "array",
+              "null"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}

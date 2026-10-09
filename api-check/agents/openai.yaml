@@ -1,0 +1,4 @@
+interface:
+  display_name: "API Check"
+  short_description: "Audit, design, and harden application APIs"
+  default_prompt: "Use $api-check to audit this API contract and implementation, rank findings by severity, and apply fixes only when I ask for implementation."

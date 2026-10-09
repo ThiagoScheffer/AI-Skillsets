@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Traceability Registry",
+  "type": "object",
+  "required": [
+    "links"
+  ],
+  "properties": {
+    "links": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "from",
+          "to",
+          "relationship"
+        ],
+        "properties": {
+          "from": {
+            "type": "string"
+          },
+          "to": {
+            "type": "string"
+          },
+          "relationship": {
+            "enum": [
+              "derives",
+              "satisfies",
+              "verifies",
+              "mitigates",
+              "implements",
+              "depends_on",
+              "supersedes"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}

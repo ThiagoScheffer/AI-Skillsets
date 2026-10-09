@@ -1,0 +1,14 @@
+name: sample-application
+description: Example project state for the Enterprise SDLC Agent Skills.
+work_type: greenfield
+risk_tier: R2
+profiles:
+  - baseline
+  - nz-private
+lifecycle: requirements
+owners:
+  - product-owner
+  - engineering-owner
+repository:
+  primary_language: typescript
+  deployment_target: vercel

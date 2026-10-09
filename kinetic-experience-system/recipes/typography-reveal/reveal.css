@@ -1,0 +1,9 @@
+.kx-title-mask { overflow: clip; }
+.kx-title-mask > span { display: inline-block; transform: translateY(0); opacity: 1; }
+@media (prefers-reduced-motion: no-preference) {
+  .kx-title-mask[data-animate="true"] > span { animation: kx-title-in .55s cubic-bezier(.2,.8,.2,1) both; }
+}
+@keyframes kx-title-in {
+  from { opacity: .01; transform: translateY(.55em); }
+  to { opacity: 1; transform: translateY(0); }
+}

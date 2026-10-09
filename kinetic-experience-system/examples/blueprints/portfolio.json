@@ -1,0 +1,112 @@
+{
+  "version": "1.0",
+  "project": {
+    "name": "Motion-native studio portfolio",
+    "framework": "React Router",
+    "existing": false,
+    "description": "Interactive editorial agency portfolio"
+  },
+  "mode": "GREENFIELD",
+  "experience": {
+    "goal": "Make a project tile become an immersive project canvas",
+    "profile": "expressive",
+    "visualPrinciples": [
+      "High-contrast editorial typography",
+      "Object continuity",
+      "Motion-rich hero; quiet reading zones"
+    ]
+  },
+  "constraints": {
+    "functionalInvariants": [
+      "Deep links and Back/Forward must work",
+      "No business logic changed"
+    ],
+    "accessibility": [
+      "Reduced-motion variant",
+      "Keyboard/focus preserved",
+      "No inert active page"
+    ],
+    "performance": [
+      "Prefer transforms/opacity",
+      "Benchmark on representative hardware; never infer FPS"
+    ]
+  },
+  "navigation": {
+    "strategy": "motion-presence",
+    "interruption": "latest-wins",
+    "scrollPolicy": "router-owned",
+    "focusPolicy": "Focus destination heading after completed route navigation",
+    "fallback": "Direct route navigation without animation"
+  },
+  "ownership": [
+    {
+      "target": "project-card-to-hero wrapper",
+      "property": "transform",
+      "owner": "motion",
+      "lifecycle": "selected project layout change"
+    },
+    {
+      "target": "project-details",
+      "property": "opacity",
+      "owner": "gsap",
+      "lifecycle": "post-morph reveal only"
+    }
+  ],
+  "transitions": [
+    {
+      "id": "grid-to-case-study",
+      "from": "/work",
+      "to": "/work/:slug",
+      "relation": "overview-detail",
+      "trigger": "Select a case study",
+      "intent": "Morph a stable project object from tile into fullscreen presentation",
+      "sharedElements": [
+        {
+          "identity": "project:slug",
+          "source": "project-card:visual",
+          "target": "case-study:hero",
+          "strategy": "shared-layout"
+        }
+      ],
+      "beats": [
+        {
+          "id": "shared-expand",
+          "action": "Expand selected project card to hero",
+          "at": "start",
+          "durationMs": 520,
+          "owner": "motion"
+        },
+        {
+          "id": "detail-entrance",
+          "action": "Reveal case study details under expanded image",
+          "at": "after:shared-expand",
+          "durationMs": 240,
+          "owner": "gsap"
+        }
+      ],
+      "fallbacks": {
+        "reducedMotion": "Switch to near-instant content update without spatial movement",
+        "absentSource": "Direct detail hero entrance with visible content",
+        "resourceFailure": "Render product content and error image without blocking navigation",
+        "interrupted": "Reconcile latest route and clear old names"
+      },
+      "acceptanceTests": [
+        "Direct deep link works without source card",
+        "Back returns to grid without a trapped overlay",
+        "No transform conflicts",
+        "Focus lands on case study heading"
+      ]
+    }
+  ],
+  "verification": {
+    "scenarios": [
+      "Deep link",
+      "Back/Forward",
+      "Rapid clicks",
+      "Reduced motion",
+      "Small viewport"
+    ],
+    "status": "untested",
+    "evidence": []
+  }
+}

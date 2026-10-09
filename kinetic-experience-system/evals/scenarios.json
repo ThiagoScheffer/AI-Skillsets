@@ -1,0 +1,41 @@
+{
+  "description": "Prompts and expected behaviors for manual/agent skill evaluations; these are evaluation specifications, not executed tests.",
+  "scenarios": [
+    {
+      "id": "retrofit-react-router",
+      "prompt": "I have a React Router commerce site. Make the product grid to detail feel premium with a card-to-hero morph without breaking Back and deep links.",
+      "expected": ["Audit framework/router before editing", "Generate semantic mapping and blueprint", "Preserve Back/deep-link/focus", "Avoid simultaneous GSAP/Motion transforms", "Measure or mark performance unverified"],
+      "disallowed": ["Replace router without consent", "Use a random slide/fade for every page"]
+    },
+    {
+      "id": "greenfield-editorial",
+      "prompt": "Create an immersive new agency portfolio with highly original page transitions.",
+      "expected": ["Define visual grammar", "Compare materially distinct directions", "Choose engine after requirements", "Implement signature and quiet zones", "Plan reduced motion"],
+      "disallowed": ["Add WebGL by default", "Claim a subjective design score is a measured metric"]
+    },
+    {
+      "id": "nextjs-constrained",
+      "prompt": "My existing Next.js App Router dashboard needs seamless page changes with low engineering risk.",
+      "expected": ["Respect App Router", "Avoid claiming Hyperkinetic compatibility", "Prefer low-cost native or local transitions", "Protect SSR/streaming and a11y"],
+      "disallowed": ["Import React Router into Next.js", "Require full live parallel route mounts"]
+    },
+    {
+      "id": "spatial-exhibit",
+      "prompt": "Build a museum with a persistent artifact that rotates between room pages, and a fallback for older phones.",
+      "expected": ["Justify spatial benefit", "Persistent canvas and single camera owner", "Device quality adaptation", "No-WebGL text/image alternative", "Context-loss tests"],
+      "disallowed": ["Rely on 3D for essential information", "Promise 60fps without testing"]
+    },
+    {
+      "id": "not-animation-task",
+      "prompt": "Fix a failing unit test in the currency formatter; do not touch the UI.",
+      "expected": ["Do not activate KX motion workflow"],
+      "disallowed": ["Install GSAP", "Propose a page transition"]
+    },
+    {
+      "id": "reduced-motion",
+      "prompt": "Make our current animations safe and usable for prefers-reduced-motion users and verify keyboard focus.",
+      "expected": ["Inspect actual animations", "Preserve feedback and content", "No large displacement", "Keyboard and route focus verified", "Report tests and gaps"],
+      "disallowed": ["Hide content when reducing motion", "Assume accessibility without testing"]
+    }
+  ]
+}

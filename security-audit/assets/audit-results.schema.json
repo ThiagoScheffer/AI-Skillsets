@@ -1,0 +1,404 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/security-audit/audit-results.schema.json",
+  "title": "Security Audit Results",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "project",
+    "scope",
+    "stack",
+    "coverage",
+    "findings",
+    "strengths",
+    "limitations",
+    "recommendations"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "project": {
+      "type": "object",
+      "required": [
+        "name",
+        "audit_date"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "audit_date": {
+          "type": "string",
+          "minLength": 8
+        },
+        "repository": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "scope": {
+      "type": "object",
+      "required": [
+        "audited",
+        "excluded"
+      ],
+      "properties": {
+        "audited": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "excluded": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "methodology_note": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "stack": {
+      "type": "object",
+      "properties": {
+        "languages": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "backend": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "frontend": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "database": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "data_access": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "authentication": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "authorization": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "tenant_isolation": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "deployment": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "coverage": {
+      "type": "object",
+      "required": [
+        "backend_handlers_discovered",
+        "backend_handlers_reviewed",
+        "git_history_available",
+        "git_history_scanned"
+      ],
+      "properties": {
+        "backend_handlers_discovered": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "backend_handlers_reviewed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "authenticated_handlers": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "privileged_operations": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "object_id_handlers": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "tenant_scoped_operations": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "frontend_privilege_gates": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "frontend_gates_mapped": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unsafe_rendering_sinks": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "secret_locations_scanned": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "git_history_available": {
+          "type": "boolean"
+        },
+        "git_history_scanned": {
+          "type": "boolean"
+        },
+        "deployment_files_reviewed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/finding"
+      }
+    },
+    "strengths": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "title",
+          "description"
+        ],
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "recommendations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "priority",
+          "title",
+          "description"
+        ],
+        "properties": {
+          "priority": {
+            "type": "string",
+            "pattern": "^P[0-9]+$"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "finding_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "github_issues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "title",
+          "labels",
+          "body"
+        ],
+        "properties": {
+          "finding_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "title": {
+            "type": "string"
+          },
+          "labels": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "body": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "$defs": {
+    "finding": {
+      "type": "object",
+      "required": [
+        "id",
+        "category",
+        "severity",
+        "title",
+        "description",
+        "evidence",
+        "exploitability",
+        "impact",
+        "remediation",
+        "regression_test"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^SEC-[0-9]{3,}$"
+        },
+        "category": {
+          "enum": [
+            "tenant-isolation",
+            "authorization",
+            "idor-bola",
+            "secrets",
+            "xss"
+          ]
+        },
+        "severity": {
+          "enum": [
+            "Critical",
+            "High",
+            "Medium",
+            "Low",
+            "Informational"
+          ]
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "component": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "location",
+              "snippet"
+            ],
+            "properties": {
+              "location": {
+                "type": "string"
+              },
+              "snippet": {
+                "type": "string"
+              },
+              "note": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": true
+          }
+        },
+        "attacker_prerequisites": {
+          "type": "string"
+        },
+        "exploitability": {
+          "type": "string"
+        },
+        "impact": {
+          "type": "string"
+        },
+        "existing_controls": {
+          "type": "string"
+        },
+        "remediation": {
+          "type": "string"
+        },
+        "regression_test": {
+          "type": "string"
+        },
+        "mappings": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "severity_assumptions": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

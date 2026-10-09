@@ -1,0 +1,19 @@
+links:
+  - from: BUS-001
+    to: NFR-001
+    relationship: derives
+  - from: USR-001
+    to: FR-001
+    relationship: derives
+  - from: TASK-001
+    to: FR-001
+    relationship: implements
+  - from: TASK-001
+    to: NFR-001
+    relationship: implements
+  - from: TEST-001
+    to: FR-001
+    relationship: verifies
+  - from: TEST-002
+    to: NFR-001
+    relationship: verifies

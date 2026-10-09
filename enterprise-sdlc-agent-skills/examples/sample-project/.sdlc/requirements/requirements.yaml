@@ -1,0 +1,21 @@
+requirements:
+  - id: FR-001
+    type: functional
+    title: Event display
+    statement: The system shall display normalized event cards from supported sources.
+    status: approved
+    priority: must
+    source: [USR-001]
+    acceptance: [AC-001]
+    verification:
+      type: integration-and-ui-test
+  - id: NFR-001
+    type: nonfunctional
+    title: Source attribution
+    statement: Every imported event shall retain its canonical source URL.
+    status: approved
+    priority: must
+    source: [BUS-001]
+    acceptance: [AC-002]
+    verification:
+      type: integration-test

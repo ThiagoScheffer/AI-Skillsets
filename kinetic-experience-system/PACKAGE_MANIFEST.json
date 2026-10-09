@@ -1,0 +1,438 @@
+{
+  "package": "kinetic-experience-system",
+  "version": "1.0.0",
+  "generated_utc": "2026-10-09",
+  "file_count_excluding_manifest": 86,
+  "files": [
+    {
+      "path": ".github/workflows/validate.yml",
+      "bytes": 408,
+      "sha256": "ba50d6a4e88e38fb725e8293c7006cc9780446c6fe51b04a1d204df95a5f1eb4"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 65,
+      "sha256": "eda849681afe6c806922705e1d48d2b0e231fceba61c142c6a6b33e4eb18dfc3"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 873,
+      "sha256": "635c616a6abaaeacda0993d47ef8417500c3ae64bbbcadb451488f213c4701d8"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 378,
+      "sha256": "041a7a499cbede9bd6ab5c80399ecd8758b7033a1eb1efc00a7b18568821f0b4"
+    },
+    {
+      "path": "CLAUDE.md",
+      "bytes": 773,
+      "sha256": "1e988fae361ad95f5993da223046767c6de67f958281e1cf8ef871c3cfc07597"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "bytes": 2562,
+      "sha256": "546ec157cfd169156ef621b1f8458ef45fe85f03c684ad683db966f12e048530"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1095,
+      "sha256": "ed4ee955095cb3396e139280173462f63d75f45b4e922e975b41603f5efb4f36"
+    },
+    {
+      "path": "QUICKSTART.md",
+      "bytes": 1691,
+      "sha256": "d329ac42b69d8de7a1d53582e47a2a094e33a25b52b9cf998b9c66eb536d0764"
+    },
+    {
+      "path": "README.md",
+      "bytes": 9632,
+      "sha256": "569dd3d85a62f5f4d55a2e6e8ce9814ba6536e0bd48a0d5ed65e14250ea5077f"
+    },
+    {
+      "path": "ROADMAP.md",
+      "bytes": 1530,
+      "sha256": "64941053a43c9b93a991f0c728ed34435359377a3f3c62cc3fbac9fe873a1b92"
+    },
+    {
+      "path": "adapters/astro/README.md",
+      "bytes": 584,
+      "sha256": "403e70451036065db6dda5f420b790b2908c80a639325eafe28c616806a0c6c6"
+    },
+    {
+      "path": "adapters/nextjs/README.md",
+      "bytes": 907,
+      "sha256": "fe66d69cc5f05ca12f249fcbbcc2c66b9c57e580eae5161fea052c750fee390e"
+    },
+    {
+      "path": "adapters/react-router/README.md",
+      "bytes": 1345,
+      "sha256": "c5845de056bcf2b671d1c2d2b43156bd9d8884acb410f2353d6fdab034061ba5"
+    },
+    {
+      "path": "adapters/vanilla-web/README.md",
+      "bytes": 619,
+      "sha256": "52836bd26f04b0aa3d954c59e6f60f737c92192c9e13b74497a3fa8729b69989"
+    },
+    {
+      "path": "adapters/vue-nuxt/README.md",
+      "bytes": 615,
+      "sha256": "c39eae5b8bed663197ffeeb99418bc75657b3267d95a2a735d2bc5e6c38cb2e2"
+    },
+    {
+      "path": "evals/scenarios.json",
+      "bytes": 2706,
+      "sha256": "b871a7015d0d71a95612580e85d43d8c7a614fa3025d8cb7ecd2dabc89189380"
+    },
+    {
+      "path": "examples/blueprints/museum-spatial.json",
+      "bytes": 3254,
+      "sha256": "2b99d889c76ca17de30fd8c989f2791ea70ff5c92d54d0f314672ab4b7cf109d"
+    },
+    {
+      "path": "examples/blueprints/portfolio.json",
+      "bytes": 3227,
+      "sha256": "34a5d92df5ee8c1d89455afa868a37e29a175b1e5696ba0cfd97f928aff9a7d1"
+    },
+    {
+      "path": "examples/blueprints/retail-retrofit.json",
+      "bytes": 2989,
+      "sha256": "df008819fbfbe2be4176f101270808c74272fcbaeeb0b7370209b731884c4a63"
+    },
+    {
+      "path": "recipes/README.md",
+      "bytes": 1377,
+      "sha256": "0694b9f74e96cd2a3f3df02e3f634554f5e8e1fd7de4d0c2540c89c76917f0e9"
+    },
+    {
+      "path": "recipes/gsap-choreography/EditorialReveal.tsx",
+      "bytes": 972,
+      "sha256": "845043870ca0b7ea349b8c053d0e0137925690ad2423456796f8342e565d84e8"
+    },
+    {
+      "path": "recipes/gsap-choreography/README.md",
+      "bytes": 768,
+      "sha256": "9d6a8081c4cf9393186b43d9b57d0e98ebd09fa9452ce159cc6c879ba99e0361"
+    },
+    {
+      "path": "recipes/microinteraction/README.md",
+      "bytes": 544,
+      "sha256": "0771548c5909e9108320cbd97dad4404da468874201150e507cd514c49a912dc"
+    },
+    {
+      "path": "recipes/microinteraction/Tabs.tsx",
+      "bytes": 2061,
+      "sha256": "b294d9acb275635b8fd21c4deaad40bf290dab6c1acf7566f09a04907e4dbc80"
+    },
+    {
+      "path": "recipes/motion-shared-layout/README.md",
+      "bytes": 944,
+      "sha256": "2451a5548511edf60900885d39e312b460a27cd02bc71360a50472a4a48d1288"
+    },
+    {
+      "path": "recipes/motion-shared-layout/SharedPreview.tsx",
+      "bytes": 1882,
+      "sha256": "5ef208f357509411400c0dc4ca566e3d06aeefe3cd7ebbb063e274c1a7e1833f"
+    },
+    {
+      "path": "recipes/native-view-transition/CardLink.tsx",
+      "bytes": 639,
+      "sha256": "cea9fc424c3a795e24b8656c1a4d0bea82597ecac0efa349719c3afbb6fd0dba"
+    },
+    {
+      "path": "recipes/native-view-transition/README.md",
+      "bytes": 1434,
+      "sha256": "ce38c33f9a61a726a31de607fddbce7aff5c751a8b21f6f52be57042faff86b0"
+    },
+    {
+      "path": "recipes/native-view-transition/view-transitions.css",
+      "bytes": 482,
+      "sha256": "433e97c1c7b5bcafd3a8abf75c76afdcf20b5ebab1eb7db7e448b978f46cdcc4"
+    },
+    {
+      "path": "recipes/parallel-navigation/README.md",
+      "bytes": 1528,
+      "sha256": "5b5b2c19b89a202da1b9860397af8740991403a6ac80f0998701211e87475236"
+    },
+    {
+      "path": "recipes/parallel-navigation/outlet.css",
+      "bytes": 376,
+      "sha256": "abad15c6f6d5fb008707e38d8bfce46068c80a5e4769f2d5f18ad01d87c24bc3"
+    },
+    {
+      "path": "recipes/parallel-navigation/transition.example.ts",
+      "bytes": 808,
+      "sha256": "999f7e108ff41d104036f84751ba2542bfeebd6ce52e6d8018d31f12673bdc13"
+    },
+    {
+      "path": "recipes/spatial-persistence/README.md",
+      "bytes": 1400,
+      "sha256": "63c09b1cc0692fe80d6a51c6985fedcb06621fc79aaba8361d9f044e794d0246"
+    },
+    {
+      "path": "recipes/typography-reveal/README.md",
+      "bytes": 699,
+      "sha256": "2e12bfced4cc066b62b07335ebfeea239a8fb2752a47f0580812d60fbd0fe299"
+    },
+    {
+      "path": "recipes/typography-reveal/reveal.css",
+      "bytes": 410,
+      "sha256": "3b81a2e7d96cb9b1f1753af91b2810fb79e8166c56531c3811a96c7625733c4e"
+    },
+    {
+      "path": "recipes/vanilla-flip/README.md",
+      "bytes": 708,
+      "sha256": "2c38232c7772ba79d9ee40cd942455f80741498be14dbf0f9414bcec5021fe41"
+    },
+    {
+      "path": "recipes/vanilla-flip/morph.ts",
+      "bytes": 1547,
+      "sha256": "6b0f5c18c0b0b8ecccdcfdad48dae77043ec6ad1f08f474ebf11a27c08f5433a"
+    },
+    {
+      "path": "references/accessibility-contract.md",
+      "bytes": 1758,
+      "sha256": "2ae60b7d7c4cab7abe255fdc1601bbe9f168856d35fafd834bedcd9b5841429d"
+    },
+    {
+      "path": "references/blueprint-format.md",
+      "bytes": 1676,
+      "sha256": "37185a2eecde309bda18ff981ded4bc4cbc2919e6625bcd671b55daa5f70dd12"
+    },
+    {
+      "path": "references/creative-grammar.md",
+      "bytes": 1814,
+      "sha256": "c5ade97868092fc84814631b7db2968278857a5b3deca7ab4009e2c66b7f1304"
+    },
+    {
+      "path": "references/decision-matrix.md",
+      "bytes": 1651,
+      "sha256": "0e5dd38ccdbecda89fb4d25b650d0c7c5569aa18b3aa6f8edd51274b086dfb81"
+    },
+    {
+      "path": "references/engine-selection.md",
+      "bytes": 2867,
+      "sha256": "4f9911b380d63c59c288c45674a33c8430a36eb91df708d23bed3f524b38dc5e"
+    },
+    {
+      "path": "references/framework-contracts.md",
+      "bytes": 1927,
+      "sha256": "d04839e4e670efda703c02282da757152f57e06c643862767b0aa938017542f4"
+    },
+    {
+      "path": "references/motion-lifecycle.md",
+      "bytes": 3088,
+      "sha256": "175d467d19642a468af27937f6ef8216a75ada0b3f1ad5561ffb91dddc109265"
+    },
+    {
+      "path": "references/performance-budgets.md",
+      "bytes": 1844,
+      "sha256": "d08bfcfaa6d39d4f10e503b68d601f873124f5c4b74a4d900cae24e63031a5bf"
+    },
+    {
+      "path": "references/prompt-playbook.md",
+      "bytes": 1762,
+      "sha256": "489bafd6ea4e9f5fef912648fc15d1fa73246ee6097fb28955c359562f4220f0"
+    },
+    {
+      "path": "references/qa-test-matrix.md",
+      "bytes": 1535,
+      "sha256": "aea1a6f102414678adfb47d96d413287ee85a63220f71277cec02610912e30c9"
+    },
+    {
+      "path": "references/quality-gates.md",
+      "bytes": 1587,
+      "sha256": "6502a498da8df4af9fb4d87d6fd196837f2e21049b07ebd06b29309a7c66435d"
+    },
+    {
+      "path": "references/semantic-motion-mapping.md",
+      "bytes": 3031,
+      "sha256": "83493a2be5e4531588ecd53f6020cadbfcf2307659607f33a38ceffe8de8fab6"
+    },
+    {
+      "path": "references/sources.md",
+      "bytes": 2371,
+      "sha256": "5d2a0e8f17d6735ac350d890c864db7f27c4aedd622d1a0101379ae989750b21"
+    },
+    {
+      "path": "schemas/motion-blueprint.schema.json",
+      "bytes": 9811,
+      "sha256": "5aefb9b98ac2ee5c299d90204a780a77150af1f74613c54457055cd2c9d2ed9d"
+    },
+    {
+      "path": "scripts/audit_repo.py",
+      "bytes": 3754,
+      "sha256": "a2c51583b7071e5d3335c92276c3862a35139aa94468a87919cb7f1830da7108"
+    },
+    {
+      "path": "scripts/install.py",
+      "bytes": 2819,
+      "sha256": "d1b3ff97f0bfce58a38c856ab726d0383f51fd35daa26643275ac8cf83f15144"
+    },
+    {
+      "path": "scripts/make_release.py",
+      "bytes": 2263,
+      "sha256": "ddefd4987791c899885f49e9c4c4943c6bb69518a5abb973c85622b906e6e88c"
+    },
+    {
+      "path": "scripts/package_individual_skills.py",
+      "bytes": 1205,
+      "sha256": "c5996b8893c271f06d992181dee831c65b7bede48ece84910808b008e3697762"
+    },
+    {
+      "path": "scripts/validate_blueprint.py",
+      "bytes": 6097,
+      "sha256": "8c74b46117eef496c4dc44e684618aa061ae6d824b2acfafb0877413e2008acc"
+    },
+    {
+      "path": "scripts/validate_skills.py",
+      "bytes": 3095,
+      "sha256": "c124ff3293648bbe33efa522057b47fa77852b0aa9ea715fb9251ecdd6574974"
+    },
+    {
+      "path": "skills/kx-creative-direction/SKILL.md",
+      "bytes": 3367,
+      "sha256": "e5657dea3fe2b563d647ba9bfb6dc2005e562c559ee202e3e63ec118ab4051c9"
+    },
+    {
+      "path": "skills/kx-creative-direction/references/checklist.md",
+      "bytes": 296,
+      "sha256": "7ef11da7fa05ca82c7fa9cac6717decf23095bf24f3c539efe9ac7a8bd727b24"
+    },
+    {
+      "path": "skills/kx-creative-exploration/SKILL.md",
+      "bytes": 2999,
+      "sha256": "09a774bd08a2f7ec29ab4c417b78124ff120f63cba190d9fc943d691e3c08540"
+    },
+    {
+      "path": "skills/kx-creative-exploration/references/checklist.md",
+      "bytes": 269,
+      "sha256": "96f678e60bb20d4fe579bbc3445e041613597ca520a78fa3c06d77f772f5a7cb"
+    },
+    {
+      "path": "skills/kx-experience-audit/SKILL.md",
+      "bytes": 3638,
+      "sha256": "0ff1820e017ec1b69412c05cca747c161908a4c11fb9e69338d3d151ffec5fec"
+    },
+    {
+      "path": "skills/kx-experience-audit/references/checklist.md",
+      "bytes": 324,
+      "sha256": "5134f291ee70c218013e78dfa4504dc95d0e2a07818a5ebd14eb5cc2fb2611af"
+    },
+    {
+      "path": "skills/kx-microinteractions/SKILL.md",
+      "bytes": 2783,
+      "sha256": "3a49e690e5279140df1edd25f653f7518d2c3e9b02f07f00b5a57f67ef05613d"
+    },
+    {
+      "path": "skills/kx-microinteractions/references/checklist.md",
+      "bytes": 226,
+      "sha256": "549aa2acb7bfa463845bd80da6ce32ed5dad95f17c82dbdfb907c819980c76bf"
+    },
+    {
+      "path": "skills/kx-morphing-layout/SKILL.md",
+      "bytes": 3050,
+      "sha256": "a55617aea78802d5240bf694e17e07fe3ac9d612fdcc2cf243b0a34ca32ffac3"
+    },
+    {
+      "path": "skills/kx-morphing-layout/references/checklist.md",
+      "bytes": 296,
+      "sha256": "50350b6550e5b3b39b17c6a59be302239d15ed2a713c6cbd77482d449e76a240"
+    },
+    {
+      "path": "skills/kx-motion-architecture/SKILL.md",
+      "bytes": 3973,
+      "sha256": "ce22044777bacbc792cf5455ba1f875756ad60fbb7f34384bf71b5cd90ef7ac2"
+    },
+    {
+      "path": "skills/kx-motion-architecture/references/checklist.md",
+      "bytes": 290,
+      "sha256": "e6170d135c6aa65e180fc4f96341f9a6f025eb9fbdd476ba5a6aba5e39e653e5"
+    },
+    {
+      "path": "skills/kx-orchestrator/SKILL.md",
+      "bytes": 5777,
+      "sha256": "8e004c392e8d03d3a529585b7904958174c44967c130143772fb70b26a868fc3"
+    },
+    {
+      "path": "skills/kx-orchestrator/references/checklist.md",
+      "bytes": 431,
+      "sha256": "dd75f0b48a621bb12b36e076e74c4450a907ef3bffc4f74a6df3381bf120891a"
+    },
+    {
+      "path": "skills/kx-performance-accessibility/SKILL.md",
+      "bytes": 3369,
+      "sha256": "0c6e797ab6b806606e3d0de76838b6a033908a45554ff8d03d827bcc92a5a09f"
+    },
+    {
+      "path": "skills/kx-performance-accessibility/references/checklist.md",
+      "bytes": 317,
+      "sha256": "17d9847542ff0541e9226e2efe4461836995bd699980939ce3ee1924f686a21f"
+    },
+    {
+      "path": "skills/kx-spatial-experiences/SKILL.md",
+      "bytes": 3096,
+      "sha256": "9794f642fec44926c6f50781bba49335a510e0eb1d5c8099fd01ddf0a8b057c9"
+    },
+    {
+      "path": "skills/kx-spatial-experiences/references/checklist.md",
+      "bytes": 302,
+      "sha256": "dc6e1e356e22ebebf06b6efc3e0e992ee52ac1057f015677fcbb3af08b98619f"
+    },
+    {
+      "path": "skills/kx-transition-design/SKILL.md",
+      "bytes": 3525,
+      "sha256": "f637105efc10ab549c20b939220f5b3b33835026d119e2d897697f67973110cd"
+    },
+    {
+      "path": "skills/kx-transition-design/references/checklist.md",
+      "bytes": 331,
+      "sha256": "f939cea705720d2f42ad81a3bb5594c811e1fd496783be9a172d9f4530736ac7"
+    },
+    {
+      "path": "skills/kx-visual-qa/SKILL.md",
+      "bytes": 3320,
+      "sha256": "9b2a274cd8cebca04f72bb2ee302c2723bdad015f89d2c2b776dcf4386f07208"
+    },
+    {
+      "path": "skills/kx-visual-qa/references/checklist.md",
+      "bytes": 310,
+      "sha256": "565b2f5d356c4f40c876303d7d8782f8eab8c5ca58bf9b43bae25e7dbc6b3d40"
+    },
+    {
+      "path": "templates/architecture-decision.md",
+      "bytes": 697,
+      "sha256": "310265879088736567f67d03867261dd59f3cb0e6a39452b18c9979e187d7d2c"
+    },
+    {
+      "path": "templates/audit-report.md",
+      "bytes": 1002,
+      "sha256": "f8c1a3a07de8dc6410f45779d5036a52ce79ee27b987bafe68660107988c4cd0"
+    },
+    {
+      "path": "templates/creative-directions.md",
+      "bytes": 672,
+      "sha256": "8e72ee1f8fce87a99af4bc2682f300824bcbea84cc1394c33d2fd00996d72674"
+    },
+    {
+      "path": "templates/motion-blueprint.template.json",
+      "bytes": 2989,
+      "sha256": "df008819fbfbe2be4176f101270808c74272fcbaeeb0b7370209b731884c4a63"
+    },
+    {
+      "path": "templates/qa-report.md",
+      "bytes": 1115,
+      "sha256": "36a3aba804669fd588d727997217db9a17b3d895723f3dd35cd33c734cae0150"
+    },
+    {
+      "path": "tests/browser-qa.sample.spec.ts",
+      "bytes": 1181,
+      "sha256": "1b5742e1f912ea056153e333e67f82756fdc8fe043b1f68d3925068f7f8651e5"
+    },
+    {
+      "path": "tests/test_package.py",
+      "bytes": 3833,
+      "sha256": "cfbc91da154c19fe45dcfe22154363e485718e85ec61e2e7105f8fd2248030be"
+    }
+  ]
+}

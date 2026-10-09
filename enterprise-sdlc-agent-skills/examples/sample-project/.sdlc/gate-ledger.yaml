@@ -1,0 +1,19 @@
+gates:
+  - gate: product-scope
+    type: human
+    status: approved
+    approved_by: example-product-owner
+    date: '2026-09-28'
+    evidence: Example only.
+  - gate: architecture
+    type: human
+    status: pending
+    approved_by: null
+    date: null
+    evidence: null
+  - gate: verification
+    type: automated
+    status: pending
+    approved_by: null
+    date: null
+    evidence: null
